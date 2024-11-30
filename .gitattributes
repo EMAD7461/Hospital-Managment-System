@@ -1,3 +1,10 @@
+* text=auto
+# Normalize all text files
+* text=auto
+
+# Force specific line endings for CSS files
+*.css text eol=lf
+
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
