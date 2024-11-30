@@ -1,0 +1,85 @@
+﻿@model Hospital_Managment_System.ViewModels.AppointmentViewModel
+
+<link rel="stylesheet" href="~/css/style.css">
+
+@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<h1>Book Appointment</h1>
+<a class="btn btn-primary btn-block" asp-controller="Home" asp-action="Index">Home</a>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Appointment.PatientName" class="control-label"></label>
+        <input asp-for="Appointment.PatientName" class="form-control" />
+        <span asp-validation-for="Appointment.PatientName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Appointment.DoctorId" class="control-label">Select Doctor</label>
+        <select asp-for="Appointment.DoctorId" class="form-control">
+            <option value="">Select a doctor</option>
+            @foreach (var doctor in Model.Doctors)
+            {
+                <option value="@doctor.Id">@doctor.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Appointment.DoctorId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Appointment.NurseId" class="control-label">Select Nurse</label>
+        <select asp-for="Appointment.NurseId" class="form-control">
+            <option value="">Select a nurse</option>
+            @foreach (var nurse in Model.Nurses)
+            {
+                <option value="@nurse.Id">@nurse.Name</option>
+            }
+        </select>
+        <span asp-validation-for="Appointment.NurseId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Appointment.AppointmentDate" class="control-label"></label>
+        <input asp-for="Appointment.AppointmentDate" class="form-control" type="date" />
+        <span asp-validation-for="Appointment.AppointmentDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Appointment.Speciality" class="control-label">Department</label>
+        <select asp-for="Appointment.Speciality" class="form-control">
+            <option value="">Select a specialty</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Opthalmology">Opthalmology</option>
+            <option value="Nuclear Magnetic">Nuclear Magnetic</option>
+            <option value="Surgical">Surgical</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Dental">Dental</option>
+        </select>
+        <span asp-validation-for="Appointment.Speciality" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Appointment.Status" class="control-label">Select Status</label>
+        <select asp-for="Appointment.Status" class="form-control">
+            <option value="Scheduled">Scheduled</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+        </select>
+        <span asp-validation-for="Appointment.Status" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Book Appointment" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a  asp-controller="Appointment" asp-action="Index">Back to List</a>
+</div>
+
+

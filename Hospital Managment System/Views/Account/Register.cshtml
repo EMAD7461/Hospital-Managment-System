@@ -1,0 +1,58 @@
+﻿@model Hospital_Managment_System.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+<link rel="stylesheet" href="~/css/style.css">
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4">
+                <a class="btn btn-primary btn-block" asp-controller="Home" asp-action="Index">Home</a>
+                <h2 class="text-center mb-4">Create an Account</h2>
+                <form asp-action="Register" method="post" class="register-form">
+                    <div class="form-group">
+                        <label asp-for="FullName" class="form-label"></label>
+                        <input asp-for="FullName" class="form-control form-control-lg" placeholder="Full Name" />
+                        <span asp-validation-for="FullName" class="text-danger">Insert FullName</span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control form-control-lg" placeholder="Email Address" />
+                        <span asp-validation-for="Email" class="text-danger">Insert Email</span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control form-control-lg" type="password" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger">Password</span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword" class="form-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control form-control-lg" type="password" placeholder="Confirm Password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger">ConfirmPassword</span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Role"></label>
+                        <select asp-for="Role" class="form-control">
+                            <option value="Admin">Admin</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Patient">Patient</option>
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Register</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a asp-action="Login" class="text-muted">Already have an account? <span class="font-weight-bold">Login here</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
