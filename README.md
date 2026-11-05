@@ -1,6 +1,16 @@
 # Hospital Management System
 
-A team graduation project completed as part of the **Digital Egypt Pioneers Initiative (DEPI) — .NET Web Developer track**. The repository contains an ASP.NET Core web application, database-related assets, an ERD, project documentation, and a presentation.
+A team graduation project completed as part of the **Digital Egypt Pioneers Initiative (DEPI) — .NET Web Developer track**. The repository contains an ASP.NET Core web application, database assets, an entity relationship diagram (ERD), project documentation, and a presentation.
+
+## System Data Model
+
+The ERD below is included in the repository and provides a visual introduction to the database design.
+
+<p align="center">
+  <a href="https://github.com/EMAD7461/Hospital-Managment-System/blob/master/ERD.jpeg">
+    <img src="ERD.jpeg" alt="Hospital Management System entity relationship diagram" width="80%"/>
+  </a>
+</p>
 
 ## Technology Stack
 
@@ -11,7 +21,7 @@ A team graduation project completed as part of the **Digital Egypt Pioneers Init
 - ASP.NET Core Identity Entity Framework integration
 - SendGrid and Twilio package references
 
-The package list above is based on the repository's project file. It identifies dependencies, not proof that every integration is fully configured or active.
+The package list above is based on the repository project file. It identifies dependencies, not proof that every integration is fully configured or active.
 
 ## Project Structure
 
@@ -30,29 +40,22 @@ The web application project is organized into the following areas:
 | Program.cs | Application startup and service configuration |
 | .csproj | .NET target framework and package references |
 
-Additional repository assets:
-- DATABASE Hospital STAFF.sql — database script.
-- ERD.jpeg — entity relationship diagram.
-- Hospital Management System Documentation Version 1.docx — project documentation.
-- Hospital-Management-System Presentation version 1.pptx — project presentation.
-- TeamWork.docx — team information/document.
+## Project Documentation
+
+- [Database SQL script](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/DATABASE%20Hospital%20STAFF.sql)
+- [Project documentation — DOCX](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/Hospital%20Management%20System%20Documentation%20Version%201.docx)
+- [Project presentation — PPTX](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/Hospital-Management-System%20Presentation%20version%201.pptx)
+- [Teamwork document](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/TeamWork.docx)
 
 ## Getting Started
 
 1. Clone the repository.
-2. Open Hospital Managment System.sln in Visual Studio 2022 or a compatible .NET 8 development environment.
-3. Review the application configuration in appsettings.json.
+2. Open `Hospital Managment System.sln` in Visual Studio 2022 or a compatible .NET 8 development environment.
+3. Review the application configuration in `appsettings.json`.
 4. Configure your own local SQL Server connection string and any required service credentials.
 5. Restore NuGet packages and review the EF Core migrations before running the application.
 
-**Security note:** Never publish production passwords, API keys, email credentials, or private connection strings in appsettings.json. Use local user secrets or environment variables for sensitive configuration.
-
-## Project Assets
-
-- [View the ERD](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/ERD.jpeg)
-- [View the database SQL script](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/DATABASE%20Hospital%20STAFF.sql)
-- [View the project documentation](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/Hospital%20Management%20System%20Documentation%20Version%201.docx)
-- [View the project presentation](https://github.com/EMAD7461/Hospital-Managment-System/blob/master/Hospital-Management-System%20Presentation%20version%201.pptx)
+**Security note:** Never publish production passwords, API keys, email credentials, or private connection strings in `appsettings.json`. Use local user secrets or environment variables for sensitive configuration.
 
 ## Author
 
